@@ -1,0 +1,40 @@
+#keyboard{
+    width: 925px;
+    height: 330px;
+    display: block;
+    border: 5px solid red;
+}
+#keyboard ::after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+.clearfix{
+    display: block;
+    width: 100%;
+    clear: both;
+}
+.active{
+    background-color: sandybrown;
+}
+.key{
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    margin: 3px;
+    padding: 3px;
+    float: left;
+}
+.textarea{
+    width: 925px;
+    height: 100px;
+}
+div[data=" "]{
+    width: 380px;
+}
+div[data="ShiftR"]{
+    width: 115px;
+}
+div[data="CapsLock"]{
+    width: 115px;
+}
