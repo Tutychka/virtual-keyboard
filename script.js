@@ -1,5 +1,5 @@
 let textarea = document.createElement('textarea');
-textarea.className = "textarea";
+textarea.id = "textarea";
 textarea.innerHTML = "";
 document.body.append(textarea);
 let div = document.createElement('div');
@@ -24,26 +24,30 @@ function init() {
 }
 init();
 
+function addToTextarea(letter) {
+    document.getElementById('textarea').value = letter;
+}
+
 document.onkeydown = (e) => {
-    // console.log(e);
     document.querySelectorAll('#keyboard .key').forEach(function (e) {
         e.classList.remove('active');
     });
-    console.log('.key[data="' + e.key + '"]');
-    // debugger;
+    addToTextarea(e.key);
     document.querySelector('#keyboard .key[data="' + e.key + '"]').classList.add('active');
-    
 }
+
 document.querySelectorAll('#keyboard .key').forEach(function (e) {
     e.onclick = function (e) {
         document.querySelectorAll('#keyboard .key').forEach(function (e) {
             e.classList.remove('active');
         });
+        addToTextarea(e.key);
         let code = this.getAttribute('active');
         this.classList.add('active');
-        console.log(code)
     }
 });
+
+
 
 // let keyboard = [];
 // document.onkeydown = (e) => {
